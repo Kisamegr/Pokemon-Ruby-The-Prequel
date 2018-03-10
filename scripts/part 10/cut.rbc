@@ -1,0 +1,38 @@
+#dynamic 0x8B000C
+
+#org @start
+lockall
+checkattack 0xF
+compare LASTRESULT 0x6
+if 0x1 goto @cantcut
+setanimation 0x0 LASTRESULT
+bufferpartypokemon 0x0 LASTRESULT
+bufferattack 0x1 0xF
+msgbox @cut MSG_YESNO
+compare LASTRESULT 0x0
+if 0x1 goto 0x81B0E3C
+msgbox 0x81B0E82 MSG_KEEPOPEN '"[buffer1] used [buffer2]."
+closeonkeypress
+doanimation 0x2
+waitstate
+
+setflag 0x126F
+hidesprite 0x7
+
+setmaptile 0xC 0x9 0x2CC 0x0
+setmaptile 0xC 0xA 0x2F3 0x0
+special 0x8E
+sound 0x5A
+releaseall
+end
+
+#org @cantcut
+msgbox @notcut MSG_SIGN
+releaseall
+end
+
+#org @cut
+= Use CUT?
+
+#org @notcut
+= The bars here seem damaged from\nthe attack.\pMaybe I could CUT them with\nsomething...

@@ -1,0 +1,27 @@
+#dynamic 0x800000
+
+#org @start
+lock
+pause 0x20
+faceplayer
+pause 0x20
+msgbox @msg1 MSG_NORMAL
+pause 0x20
+applymovement 0x1 @ms
+waitmovement 0x1
+setflag 0x128A
+release
+end
+
+#org @msg1
+= Well done so far.\pI saw them going into this room.\pPlease watch out for their traps!
+
+
+#org @ms
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x54
+#raw 0xFE

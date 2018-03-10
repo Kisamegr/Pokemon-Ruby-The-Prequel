@@ -1,0 +1,55 @@
+#dynamic 0x8B0000
+
+#org @start
+lock
+checkflag 0x126A
+if 0x1 goto @second
+faceplayer
+msgbox @msg1 0x6 
+release
+applymovement 0x1 @move1
+setflag 0x126A
+waitmovement 0x1
+end
+
+#org @second
+pause 0x15
+faceplayer
+msgbox @msg2 0x6
+applymovement 0x1 @move2
+setflag 0x126B
+setflag 0x126C
+setflag 0x126D
+waitmovement 0x1
+release
+end
+
+
+
+#org @move1
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @move2
+#raw 0x09
+#raw 0x54
+#raw 0x09
+#raw 0xFE
+
+#org @msg1
+= [blue_rs]I've been here before.\pJust follow my lead and we will\ncatch them together!
+
+#org @msg2
+= [blue_rs]I'll go first, to check if it's safe.\pWait 10 seconds and then enter.
+
+
+
+
+

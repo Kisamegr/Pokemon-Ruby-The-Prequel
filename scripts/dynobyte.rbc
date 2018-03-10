@@ -1,0 +1,13 @@
+#dynamic 0x8B3EBC
+
+
+#org @start
+lock
+faceplayer
+msgbox @msg MSG_NORMAL
+release
+end
+
+
+#org @msg
+= [red_rs]Hey!\pYou would expect to find something\nhidden here, but it's just me\lLilith :P\pBut don't get dissapointed, I got\nsomething for you!\pI, Kisamegr, am a game developer,\nand am making games with a friend\lunder the Dynobyte Games name.\pSearch for us in the Play Store\nand Windows Store!\pWe currently have 1 free game\nnamed Swingoff but there are more\lto come!.\pCheck us out if you wish to\nsupport us!

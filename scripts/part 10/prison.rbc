@@ -1,0 +1,324 @@
+#dynamic 0x8B0C88
+
+#org @start
+
+lockall
+setmaptile 0xB 0x9 0x30A 0x1
+setmaptile 0xC 0x9 0x308 0x1
+setmaptile 0xD 0x9 0x309 0x1
+
+setmaptile 0xB 0xA 0x31A 0x1
+setmaptile 0xC 0xA 0x318 0x0
+setmaptile 0xD 0xA 0x319 0x1
+
+setmaptile 0xB 0xB 0x322 0x1
+setmaptile 0xC 0xB 0x320 0x1
+setmaptile 0xD 0xB 0x321 0x1
+
+special 0x8E
+sound 0x25
+
+pause 0x20
+
+fadesong 0x1B9
+
+msgbox @msg0 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x10
+
+special 0x113
+applymovement 0x7F @movecam1
+waitmovement 0x0
+special 0x114
+
+pause 0x20
+
+
+applymovement 0x3 @moveup
+applymovement 0x2 @moveup
+waitmovement 0x3
+waitmovement 0x2
+applymovement 0x1 @moveup
+waitmovement 0x1
+pause 0x20
+
+msgbox @msg1 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x25
+
+clearflag 0x126C
+showsprite 0x4
+
+applymovement 0x4 @moveup
+waitmovement 0x4
+
+pause 0x15
+
+applymovement 0x1 @moveright_faceleft
+waitmovement 0x1
+
+pause 0x10
+
+applymovement 0x4 @stepup
+waitmovement 0x4
+
+releaseall
+
+msgbox @msgred MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x20
+
+sound 0x11
+applymovement 0x4 @jump
+waitmovement 0x4
+
+setflag 0x126C
+clearflag 0x126D
+hidesprite 0x4
+showsprite 0x5
+
+pause 0x20
+
+msgbox @msgaqua MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x2 @movecrisp
+waitmovement 0x2
+
+pause 0x20
+
+msgbox @msgguycomes MSG_KEEPOPEN
+closeonkeypress
+
+
+applymovement 0x5 @excla
+waitmovement 0x5
+
+applymovement 0x5 @faceleft
+applymovement 0x1 @faceleft
+waitmovement 0x0
+
+applymovement 0x6 @moveblueguy 
+waitmovement 0x6
+
+
+pause 0x15
+
+msgbox @msgguycomescloser MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0x9 @movered
+waitmovement 0x9
+
+applymovement 0x2 @faceleft
+applymovement 0x3 @faceleft
+applymovement 0x6 @moveblueout
+waitmovement 0x0
+
+pause 0x20
+
+applymovement 0x5 @que
+applymovement 0x1 @que
+
+msgbox @afterred1 MSG_KEEPOPEN
+closeonkeypress
+msgbox @afterred2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+msgbox @truemsgred1 MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0x9 @excla
+waitmovement 0x9
+
+pause 0x20
+
+applymovement 0x9 @facedown
+waitmovement 0x9
+
+msgbox @truemsgred2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x1 @facedown 
+waitmovement 0x1
+
+msgbox @maxie1 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x1 @faceleft
+applymovement 0x9 @faceright
+waitmovement 0x0
+
+pause 0x15
+
+msgbox @truemsgred3 MSG_KEEPOPEN
+closeonkeypress
+
+msgbox @maxie2 MSG_KEEPOPEN
+closeonkeypress
+
+msgbox @truemsgred4 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+showpokepic 0x6 0x9 0x5
+cry 0x6 0x0
+waitcry
+hidepokepic
+
+sound 0x50
+
+pause 0x15
+warpmuted 0x0 0x61 0x0 0xC 0x9
+
+
+
+
+end
+
+#org @msg0
+= [red_rs]Whahahahahaha.
+
+#org @msg1
+= [red_rs]Right into our trap.\pWe should have taken you out when\nwe had the chance in the cave.\pI never imagined you would get out\nof there alive.\pBut we caught you at last, and\nthere is no escaping this time.\pAm I right Trainer Red?
+
+#org @msgred
+= [blue_rs]Yeah, the plan was a success.\pYou actually waited for us to set\neverything up...\pYou are too naive.\pYour kindness got you trapped in\nhere, and soon you will be killed.\pBut before we do that, let me show\nyou who I really am.
+
+#org @msgaqua
+= [blue_rs]It's me, Archie, the leader of\nTeam Aqua.\pFor years, we were trying to\nsteal the Agency's pokemon, but\lcouldn't pass the security.\pBut teaming up with Magma and\nMaxie was the best choice, \lconsidering the outcome.\pAnyway, talking to a soon-to-be\ndead man sure is pointless...\pCleave him to the brisket!
+
+#org @msgguycomes
+= BOSS ARCHIE !!!!!
+
+#org @msgguycomescloser 
+= -pant- -pant-\pSOMEONE IS WRECKING OUR FORCES!\pWE NEED HELP!!!
+
+#org @afterred1
+= [red_rs]THE REAL TRAINER RED?
+
+#org @afterred2
+= [blue_rs]WHY ARE YOU HERE?!
+
+#org @truemsgred1
+= [magenta_rs]I was called here from the Hoenn\nHeadquarters chief,\pto stop you from...
+
+#org @truemsgred2
+= [magenta_rs]Why is my text color pink?\pWhy is it not red???
+
+#org @maxie1
+= [red_rs]Well, I got to have the red color,\nas the leader of Team Magma...\pAnd I was introduced in the 5th\nepisode, you just came...
+
+#org @truemsgred3
+= [magenta_rs]I didn't know it was first come\nfirst served...
+
+#org @maxie2
+= [red_rs]Life is hard dude.
+
+#org @truemsgred4
+= [magenta_rs]ANYWAY\pTime to finish this.\pCharizard, use OVERHEAT!
+
+
+
+
+#org @que
+#raw 0x57
+#raw 0xFE
+
+#org @excla
+#raw 0x56
+#raw 0xFE
+
+#org @faceleft
+#raw 0x02
+#raw 0xFE
+
+#org @facedown
+#raw 0x0
+#raw 0xFE
+
+#org @faceright
+#raw 0x03
+#raw 0xFE
+
+#org @moveup
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @movecam1
+#raw 0x08
+#raw 0x08
+#raw 0xFE
+
+#org @movecam2
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @moveright_faceleft
+#raw 0x0B
+#raw 0x02
+#raw 0xFE
+
+#org @stepup
+#raw 0x09
+#raw 0xFE
+
+#org @stepup2
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @jump
+#raw 0x4C
+#raw 0xFE
+
+#org @movecrisp
+#raw 0x09
+#raw 0x09
+#raw 0x07
+#raw 0x01
+#raw 0xFE
+
+#org @moveblueguy
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0x18
+#raw 0xFE
+
+
+#org @movered
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0xFE
+
+#org @moveblueout
+#raw 0x015
+#raw 0x015
+#raw 0x018
+#raw 0x018
+#raw 0x02
+#raw 0xFE

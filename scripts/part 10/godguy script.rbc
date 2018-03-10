@@ -1,0 +1,171 @@
+#dynamic 0x8B3EBC
+
+
+#org @start
+lock
+
+msgbox @msg1 MSG_NORMAL
+
+msgbox @msg2 MSG_YESNO
+compare LASTRESULT 0x1
+if 0x1 goto @yes
+release
+end
+
+#org @yes
+pause 0x15
+msgbox @msgchant MSG_NORMAL
+pause 0x30
+sound 0xCC
+pause 0x20
+fadescreen 0x3
+pause 0x25
+
+clearflag 0x128A
+showsprite 0x2
+setweather 0x0D
+doweather
+fadescreen 0x2
+pause 0x30
+
+msgbox @msggod1 MSG_NORMAL
+pause 0x50
+msgbox @msggod2 MSG_NORMAL
+pause 0x20
+msgbox @msggirl1 MSG_NORMAl
+pause 0x15
+
+clearflag 0x128B
+showsprite 0x1
+applymovement 0x1 @movegirl
+waitmovement 0x1
+spriteface 0xFF 0x4
+
+pause 0x15
+
+msgbox @msggirl2 MSG_NORMAL
+spriteface 0x1 0x2
+spriteface 0xFF 0x2
+msgbox @msggirl3 MSG_NORMAL
+pause 0x15
+msgbox @msggod3 MSG_NORMAL
+
+setweather 0x02
+doweather
+fadesong 0x1B5
+pause 0x45
+spriteface 0xFF 0x4
+spriteface 0x1 0x3
+pause 0x20
+
+msgbox @msggirl4 MSG_NORMAL
+spriteface 0x1 0x2
+spriteface 0xFF 0x2
+
+pause 0x15
+msgbox @msggirl5 MSG_NORMAL
+
+pause 0x15
+msgbox @msggod4 MSG_NORMAL
+
+pause 0x15
+msgbox @msggirl6 MSG_NORMAL
+
+pause 0x15
+msgbox @msggod5 MSG_NORMAL
+
+pause 0x15
+spriteface 0x2 0x2
+
+pause 0x15
+spriteface 0xFF 0x4
+spriteface 0x1 0x3
+
+pause 0x15
+msgbox @msggirl7 MSG_NORMAL
+
+pause 0x30
+spriteface 0x2 0x1
+
+pause 0x15
+msgbox @msggod6 MSG_NORMAL
+spriteface 0x1 0x2
+spriteface 0xFF 0x2
+pause 0x20
+sound 0xC0
+special 0x119
+
+waitstate
+
+pause 0x55
+warpmuted 0x0 0x61 0x0 0x0 0x0
+
+
+release
+end
+
+
+
+#org @movegirl
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x02
+#raw 0xFE
+
+
+#org @msg1
+= There is a scroll here...
+
+#org @msg2
+= Should I read it?
+
+#org @msgchant
+= "Almighty protector of the sun\nand sky,"\p"I beg of thee, please\nheed my cry."
+
+#org @msggod1
+= [yellow_rs]Who dares to summon the King of\nthe Spiritworld.\pSummoning me during the lunch time\nis a great sin against the gods.
+
+#org @msggod2
+= [yellow_rs]Speak to me young man, don't be\nafraid.\pYou are the one who called me here\nin the first place.
+
+#org @msggirl1
+= [red_rs]How can he speak if you scare him\nlike that all of a sudden...
+
+
+#org @msggirl2
+= [red_rs]Hey,\pFate has brought us together again.\pBut didn't expect to see you here\non my world.\pSomething bad must have happened\nfor you to be here.\pBut first...
+
+#org @msggod3
+= [yellow_rs]Oh, sorry sweetie.
+
+#org @msggirl3
+= [red_rs]Dad stop that annoying storm\nweather effect...
+
+#org @msggirl4
+= [red_rs]Much better.\pI suppose you don't remember\nexactly what happened, but one\lthing is for sure.\pYou are dead.\pAnd there is nothing you can do\nabout it.\pFortunately, my dad here can!
+
+#org @msggirl5
+= [red_rs]Can you revive him dad, for me\nplease?
+
+#org @msggod4
+= [yellow_rs]You know I can't be doing that\nhoney pie.\pI have to maintain peace and order\nin the spirit world, not throw\lpeople back to the living world.
+
+#org @msggirl6
+= [red_rs]But he is special dad...\pCan't you make an exception?
+
+#org @msggod5
+= [yellow_rs]...\pI guess it's alright, if it is\nonly for one person.\pSay your goodbyes while I prepare\nthe ritual.
+
+#org @msggirl7
+= [red_rs]Well, I just hope I won't see you\nagain here so soon :P\pBye bye!
+
+#org @msggod6
+= [yellow_rs]I'm ready.
+
+
+
+
+

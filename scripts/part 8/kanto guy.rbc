@@ -1,0 +1,16 @@
+#dynamic 0x800000
+
+#org @start
+trainerbattle 0x0 0x24C 0x0 @before @after
+msgbox @beaten 0x6
+release
+end
+
+#org @before
+= [red_rs]We, from Kanto Region, take our\nPokemon fights seriously!
+
+#org @after
+= I thought my Arcanine was the strongest...
+
+#org @beaten
+= [red_rs]I should get back to the\nKanto headquarters...

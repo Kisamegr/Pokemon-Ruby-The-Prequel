@@ -1,0 +1,60 @@
+#dynamic 0x800000
+
+
+#org @start
+lock
+pause 0x30
+
+msgbox @msg MSG_NORMAL
+
+pause 0x20
+
+applymovement 0x1 @face
+applymovement 0x2 @face
+applymovement 0x3 @face
+applymovement 0x4 @face
+applymovement 0x5 @face
+
+
+playsong 0x1BC 0x0
+
+waitmovement 0x0
+
+pause 0x25
+
+applymovement 0x2 @step
+applymovement 0x5 @step
+
+pause 0x10
+
+applymovement 0xFF @player
+waitmovement 0x0
+
+pause 0x15
+
+setflag 0x127C
+
+
+release
+end
+
+
+
+#org @face
+#raw 0x0
+#raw 0xFE
+
+#org @step 
+#raw 0x04
+#raw 0x04
+#raw 0xFE
+
+#org @player
+#raw 0x15
+#raw 0x15
+#raw 0x1
+#raw 0xFE
+
+
+#org @msg
+= [transp_rs]...\pYou\pShould\pNot\pBe\pHere\p...\pGet\pOut

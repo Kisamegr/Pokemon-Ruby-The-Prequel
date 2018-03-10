@@ -1,0 +1,16 @@
+#dynamic 0x800000
+
+#org @start
+trainerbattle 0x0 0x24F 0x0 @before @after
+msgbox @beaten 0x6
+release
+end
+
+#org @before
+= [red_rs]Your luck ended when you found me.
+
+#org @after
+= I can't believe... I lost...
+
+#org @beaten
+= [red_rs]You will never catch BOSS!

@@ -1,0 +1,12 @@
+#dynamic 0x
+
+#org @start
+msgbox @msgred MSG_NORMAL
+
+
+
+
+
+
+
+#org@msgred

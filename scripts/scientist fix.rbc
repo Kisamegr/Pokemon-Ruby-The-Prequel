@@ -1,0 +1,12 @@
+#dynamic 0x6B0AC8
+
+#org @start
+lock
+faceplayer
+msgbox @msg MSG_NORMAL
+release
+end
+
+
+#org @msg
+= Got a lot of paperwork to do...

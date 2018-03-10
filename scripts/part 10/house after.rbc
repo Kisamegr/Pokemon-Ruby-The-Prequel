@@ -1,0 +1,230 @@
+#dynamic 0x8B0C88
+
+#org @start
+
+lockall
+checkflag 0x129C
+if 0x1 goto @nopes
+
+pause 0x15
+applymovement 0x1 @excla
+waitmovement 0x1
+pause 0x15
+
+msgbox @msgmum1 MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0xFF @movepl
+waitmovement 0x0
+
+pause 0x15
+
+spriteface 0x7 0x4
+spriteface 0x8 0x4
+
+pause 0x15
+
+msgbox @msgmum2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+msgbox @msgsmith MSG_KEEPOPEN
+closeonkeypress
+
+msgbox @msgred1 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+msgbox @msgred2 MSG_KEEPOPEN
+closeonkeypress
+
+applymovement 0x6 @movemary
+waitmovement 0x6
+
+pause 0x15
+
+spriteface 0xFF 0x1
+
+pause 0x15
+
+msgbox @msgmary MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x20
+
+applymovement 0x7 @moveright
+waitmovement 0x7 
+
+pause 0x15
+
+spriteface 0xFF 0x3
+
+pause 0x15
+
+msgbox @msgsmith2 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+msgbox @msgred3 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x25
+
+msgbox @msgmary2 MSG_KEEPOPEN
+closeonkeypress
+
+spriteface 0x7 0x1
+spriteface 0xFF 0x1
+
+pause 0x15
+
+msgbox @msgred4 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+msgbox @msgsmith3 MSG_KEEPOPEN
+closeonkeypress
+
+pause 0x15
+
+applymovement 0x7 @outsmith
+applymovement 0x6 @outmary
+applymovement 0x8 @outred
+
+waitmovement 0x0
+
+setflag 0x129C
+setflag 0x129D
+setflag 0x129E
+
+applymovement 0x1 @movemum
+waitmovement 0x1
+
+pause 0x15
+
+spriteface 0xFF 0x3
+
+pause 0x15
+
+
+msgbox @msglast MSG_KEEPOPEN
+closeonkeypress
+
+
+releaseall
+end
+
+
+
+
+#org @nopes
+releaseall
+end
+
+
+#org @msgmum1
+= Mum: Oh, hey [player].
+
+
+#org @msgmum2
+= Mum: You woke up at last.
+
+
+#org @msgsmith
+= Mr.Smith: Glad to see you are ok\nafter all this.\pYou must be wondering what\nhappened...
+
+#org @msgred1
+= [red_rs]Trainer Red: Please Mr.Smith, let\nme explain, as I am in part to\lblame.
+
+#org @msgred2
+= [red_rs]After my Charizard's attack,\neverything around started falling\lapart.\pA hole opened in the wall on the\nleft and everyone started running\ltowards it to escape.\pWreckage fell between me and your\ncage, and I couldn't reach you...\pI was shouting at you but I guess\na rock hit you on the head and you\llost your senses.\pI had no other choice but to leave\nyou behind...\pThen they found you unconcious\nnear the area, and transported you\lto the hospital for treatment.\pAnd here we are now.
+
+#org @msgmary
+= Mary: As for Team Magma & Aqua...\pOur rangers found them in the\nforest.\pThey caught them and retrieved all\nthe stolen Pokemon.
+
+#org @msgsmith2
+= Mr.Smith: Of course, you don't\nhave to come back to the agency \lif you don't want to.\pThat is your choice to make.
+
+#org @msgred3
+= [red_rs]Again, I'm deeply sorry for my\nmistake.
+
+#org @msgmary2
+= Mary: Alright, time to go guys.\pWe have our jobs to attend.
+
+#org @msgred4
+= [red_rs]Yes, I have to return to Kanto\ntoo.
+
+#org @msgsmith3
+= Mr.Smith: Bye [player]
+
+#org @msglast
+= Mum: You are lucky to have made\nsuch good friends.\pBut your adventure just started!\pYou still have a long way till the\nPokemon League and the Elite Four.\pSo what are you waiting for?
+
+#org @excla
+#raw 0x56
+#raw 0xFE
+
+#org @movepl
+#raw 0x08
+#raw 0x08
+#raw 0x0A
+#raw 0xFE
+
+#org @movemary
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x09
+#raw 0xFE
+
+
+
+#org @moveright
+#raw 0x0B
+#raw 0xFE
+
+#org @outmary
+#raw 0x08
+#raw 0x0B
+#raw 0x0
+#raw 0x54
+#raw 0x08
+#raw 0xFE
+
+#org @outred
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x54
+#raw 0x08
+#raw 0xFE
+
+#org @outsmith
+#raw 0x14
+#raw 0x14
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x54
+#raw 0x08
+#raw 0xFE
+
+#org @movemum
+#raw 0x05
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x0B
+#raw 0x08
+#raw 0x03
+#raw 0xFE
+

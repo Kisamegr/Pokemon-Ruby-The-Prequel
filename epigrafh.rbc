@@ -1,0 +1,31 @@
+#dynamic 0x6B2BCC
+
+#org @start
+lock
+checkflag 0x1262
+if 0x1 goto @end
+fadesong 0x1BB
+pause 0x30
+msgbox @text MSG_NORMAL
+special 0x13D
+pause 0x15
+showsprite 0x1
+setflag 0x1261
+setflag 0x1262
+hidesprite 0x2 
+setmaptile 0x30 0x0F 0x202 0x1
+setmaptile 0x31 0x0F 0x203 0x1
+setmaptile 0x32 0x0F 0x202 0x1
+special 0x8E
+waitstate
+
+
+release
+end
+
+#org @end
+release
+end
+
+#org @text
+= [darkgrey_rs]When its life comes to an end, it\nabsorbs the life energy of every\lliving thing and turns into a\lcocoon once more.

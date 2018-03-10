@@ -1,0 +1,6 @@
+#dynamic 0x
+
+#org @start
+giveitem 0x30 0x1 MSG_FIND
+setflag 0x1300
+end

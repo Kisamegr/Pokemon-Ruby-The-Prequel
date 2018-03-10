@@ -1,0 +1,268 @@
+#dynamic 0x6BADB8
+
+#org @start 
+fadesong 0x1A7
+applymovement 0x7 @ex
+pause 0x20
+trainerbattle 0x1 0x240 0x0 @before @after @later
+end
+
+#org @later
+fadesong 0x1A7
+applymovement 0x7 @left
+waitmovement 0x7
+pause 0x25
+msgbox @bossmsg MSG_NORMAL
+applymovement 0x7 @move_out
+pause 0x25
+applymovement 0xFF @move_pl
+waitmovement 0x7
+waitmovement 0xFF
+
+pause 0x25
+applymovement 0x06 @que
+waitmovement 0x06
+applymovement 0x06 @right
+waitmovement 0x06
+pause 0x20
+
+msgbox @bb1 MSG_NORMAL
+applymovement 0x1 @ex
+waitmovement 0x1
+msgbox @bb2 MSG_NORMAL
+pause 0x20
+applymovement 0x2 @ex
+waitmovement 0x2
+msgbox @bb3 MSG_NORMAL
+pause 0x20
+applymovement 0x6 @down
+waitmovement 0x6
+pause 0x20
+msgbox @bb4 MSG_NORMAL
+pause 0x25
+applymovement 0x4 @tim_move1
+waitmovement 0x4
+msgbox @tim1 MSG_NORMAL
+pause 0x15
+msgbox @timboss MSG_NORMAL
+pause 0x15
+applymovement 0x4 @tim_move2
+waitmovement 0x4
+
+trainerbattle 0x1 0x24E 0x0 @before2 @after2 @later2
+end
+
+#org @later2
+fadesong 0x1A7
+applymovement 0x6 @right
+waitmovement 0x6
+msgbox @btimmy MSG_NORMAL
+applymovement 0x5 @move_samantha
+waitmovement 0x5
+applymovement 0xFF @right
+waitmovement 0xFF
+trainerbattle 0x1 0x251 0x0 @talk_sam_b @talk_sam_a @later3
+end
+
+#org @later3
+fadesong 0x1A7
+pause 0x25
+applymovement 0xFF @left
+waitmovement 0xFF
+msgbox @boss3 MSG_NORMAL
+trainerbattle 0x1 0x25A 0x0 @talk_boss_b @talk_boss_a @later4
+end
+
+#org @later4
+fadesong 0x1A7
+msgbox @boss4 MSG_NORMAL
+applymovement 0x6 @down
+waitmovement 0x6
+msgbox @boss41 MSG_NORMAL
+pause 0x20
+fadescreen 0x3
+fadesong 0x1C8
+pause 0x20
+hidesprite 0x3
+hidesprite 0x4
+hidesprite 0x5
+hidesprite 0x6
+hidesprite 0x7
+hidesprite 0x8
+hidesprite 0x9
+setflag 0x1272
+setflag 0x1273
+setflag 0x1274
+setflag 0x1275
+setflag 0x1276
+setflag 0x1277
+setflag 0x1278
+pause 0x20
+fadescreen 0x2
+pause 0x20
+pause 0x20
+applymovement 0x1 @mary_after
+waitmovement 0x1
+msgbox @mafter MSG_NORMAL
+pause 0x15
+applymovement 0x2 @smith_after
+waitmovement 0x2
+msgbox @safter MSG_NORMAL
+pause 0x15
+applymovement 0x2 @down
+pause 0x20
+applymovement 0x2 @up
+pause 0x15
+msgbox @safter2 MSG_NORMAL
+end
+
+
+#org @before
+= [red_rs]Where are you going pal? \pThis place is under Team Magma\ncontrol now!
+
+#org @after
+= I can't beat you, but the Boss can!
+
+#org @before2
+= [red_rs]I won't let you escape!
+
+#org @after2
+= I still need more practice...
+
+#org @bossmsg
+= [red_rs]BOSS!!! BOSS!!!
+
+#org @bb1
+= [red_rs]BOSS: You again...\pI didn't think I'd see you again.
+
+#org @bb2
+= [blue_rs]MARY: [player] run before they\ncatch you.\pSave your life at least!
+
+#org @bb3
+= Mr.SMITH: Go inform the\nheadquarters in the Kanto Region!\pTell them we need immediate\nassistance.
+
+#org @bb4
+= [red_rs]BOSS: You think we will let him leave?\pGet him Bob!
+
+#org @tim1
+= [red_rs]My name is actually... Tim
+
+#org @timboss
+= [red_rs]BOSS: Whatever... Just fight him!
+
+#org @btimmy
+= [red_rs]BOSS: It seems Bob wasn't enough...\pSamantha, take care of him!
+
+#org @talk_sam_b
+= [red_rs]Sure thing BOSS!
+
+#org @talk_sam_a
+= Damn... you are strong...
+
+#org @boss3
+= [red_rs]BOSS: How can this be?\pEven one of our elites, Samantha\nlost...\pI must take action myself!
+
+#org @talk_boss_b
+= [red_rs]Prepare to lose!
+
+#org @talk_boss_a
+= I... lost?!
+
+#org @boss4
+= [red_rs]BOSS: Who are you...\pHow can you be so strong.\pAnyway...
+
+#org @boss41
+= [red_rs]We got what we need.\pNo need to stay here longer.\pLet's go team!
+
+#org @mafter
+= [blue_rs]Mary: I don't know what to say...\p[player] you saved us...\pThank you very much.
+
+#org @safter
+= Mr.Smith: But they still have all \nof our[PO][Ke]MON...\pI'll go inform the other HQs to\nsend some agents for help.
+
+#org @safter2
+= But it will be too late until they \narrive here...\pBecause the rain will erase\nany clues left.
+\pWe must search the place ourselves!
+
+#org @tim_move1
+#raw 0x0B
+#raw 0x0B
+#raw 0x01
+#raw 0xFE
+
+#org @tim_move2
+#raw 0x0B
+#raw 0x01
+#raw 0xFE
+
+#org @up
+#raw 0x01
+#raw 0xFE
+
+#org @left
+#raw 0x02
+#raw 0xFE
+
+#org @right
+#raw 0x03
+#raw 0xFE
+
+#org @down
+#raw 0x0
+#raw 0xFE
+
+#org @ex
+#raw 0x56
+#raw 0xFE
+
+#org @que
+#raw 0x57
+#raw 0xFE
+
+#org @move_pl
+#raw 0x0A
+#raw 0x0A
+#raw 0x0A
+#raw 0x0A
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x0A
+#raw 0x0A
+#raw 0xFE
+
+
+#org @move_out
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x15
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x17
+#raw 0x03
+#raw 0xFE
+
+#org @move_samantha
+#raw 0x0A
+#raw 0x09
+#raw 0x02
+#raw 0xFE
+
+#org @mary_after
+#raw 0x09
+#raw 0x09
+#raw 0x03
+#raw 0xFE
+
+#org @smith_after
+#raw 0x09
+#raw 0xFE

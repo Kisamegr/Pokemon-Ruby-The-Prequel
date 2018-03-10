@@ -1,0 +1,60 @@
+#dynamic 0x8B1198
+
+#org @start
+lock
+msgbox @m1 MSG_NORMAL
+pause 0x30
+msgbox @m2 MSG_NORMAL 
+pause 0x30
+msgbox @m3 MSG_NORMAL 
+pause 0x20
+applymovement 0x1 @ex
+waitmovement 0x1
+pause 0x20
+faceplayer
+pause 0x20
+msgbox @m4 MSG_NORMAL 
+pause 0x10
+
+fadescreen 0x1
+fanfare 0x170
+special 0x0
+waitfanfare
+fadescreen 0x0
+
+pause 0x10
+msgbox @m5 MSG_NORMAl
+pause 0x20
+
+setflag 0x1281
+fadescreen 0x2
+hidesprite LASTTALKED
+pause 0x20
+
+release
+end
+
+
+
+#org @m1
+= ... ... ... ...
+
+#org @m2
+= C..n y... he..r m... ?
+
+#org @m3
+= Can you hear me ?
+
+#org @m4
+= At last, I can talk to you.\pI am the spirit of this realm, the\nguardian of this continent.\pI am the one who guided you to\nYveltal, because I know you are\lsomething special.\pMy powers are weakened due to an\ninstability at the current\lspacetime.\pThat's why I could not talk to you\nall this time...\pI need your help again rescuing\nall those Pokemon from the evil\lTeam Magma.\pThey plan on sacrificing them in order\nto resurrect a greater evil.\pBut beware! They have left traps\nand tricks behind to stop any\lpursuers.\pAlthough I can't assist you during\nyour adventure, but I can at least\lheal your pokemon...
+
+#org @m5
+= Good Luck!
+
+#org @ex
+#raw 0x56
+#raw 0xFE
+
+#org @down
+#raw 0x00 
+#raw 0xFE

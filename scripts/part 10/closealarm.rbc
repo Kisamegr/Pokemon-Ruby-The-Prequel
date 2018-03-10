@@ -1,0 +1,22 @@
+#dynamic 0x8B000C
+
+#org @start 
+lock
+checkflag 0x127A
+if 0x1 goto @nopes
+msgbox @msg MSG_SIGN
+pause 0x15
+sound 0x1F
+fadedefault
+setflag 0x127A
+
+release
+end
+
+#org @nopes
+release
+end
+
+
+#org @msg
+= This seems like a control panel.\pMaybe I could disable the annoying\nalarm from here...

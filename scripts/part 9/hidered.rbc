@@ -1,0 +1,6 @@
+#dynamic 0x6B7B48
+
+#org @start
+setflag 0x123C
+hidesprite 0x2
+end

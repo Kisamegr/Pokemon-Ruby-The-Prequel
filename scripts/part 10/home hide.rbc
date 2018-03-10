@@ -1,0 +1,23 @@
+#dynamic 0x8B3EBC
+
+
+#org @start
+checkflag 0x129F
+if 0x0 goto @hide
+'showsprite 0x6
+'showsprite 0x7
+'showsprite 0x8
+'clearflag 0x129C
+'clearflag 0x129D
+'clearflag 0x129E
+'clearflag 0x129F
+end
+
+#org @hide
+hidesprite 0x6
+hidesprite 0x7
+hidesprite 0x8
+setflag 0x129C
+setflag 0x129D
+setflag 0x129E
+end

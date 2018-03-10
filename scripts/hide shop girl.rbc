@@ -1,0 +1,11 @@
+#dynamic 0x6BA1A0
+
+#org @start
+checkflag 0x1226
+if 0x0 goto @hidegirl
+clearflag 0x1216
+end
+
+#org hidegirl
+setflag 0x1216
+end

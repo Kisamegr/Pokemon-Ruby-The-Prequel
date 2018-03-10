@@ -1,0 +1,22 @@
+#dynamic 0x00000000
+
+#org @start
+checkflag 0x1251
+if 0x0 goto @hide_rock
+clearflag 0x1255
+showsprite 0x5
+getplayerpos 0x4011 0x4012
+compare 0x4012 0x0A
+if 0x0 goto @hide_ghost
+clearflag 0x1256
+showsprite 0x6
+end
+
+#org @hide_rock
+setflag 0x1255
+goto @hide_ghost
+end
+
+#org @hide_ghost
+setflag 0x1256
+

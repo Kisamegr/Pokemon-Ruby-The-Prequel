@@ -1,0 +1,47 @@
+#dynamic 0x6BF2B0
+
+#org @start
+lock
+faceplayer
+checkflag 0x122D
+if 0x1 goto @done
+msgbox @intro 0x6
+goto @check
+release
+end
+
+#org @check
+checkitem 0x30 0x3
+compare 0x800D 0x1
+if 0x4 goto @got
+msgbox @nope 0x6
+release
+end
+
+#org @got
+removeitem 0x30 0x3
+msgbox @yes 0x6
+applymovement 0x1 @move
+setflag 0x122D
+release
+end
+
+#org @done
+release
+end
+
+
+#org @move
+#raw 0x0A
+#raw 0x03
+#raw 0xFE
+
+#org @intro
+= You finished my test.\pAs I said, I'll let you pass if\nyou found my 3 red shards.
+
+#org @nope
+= But you haven't found them all.\pYou have to go back and search for\nall 3 of them.
+
+
+#org @yes
+= And you do have them.\pOur boss is up ahead, but he is\nnot alone, he found new allies to\lhelp him.\pYou can still go back if you don't\nwant to get hurt.\pBut that's your choice.\pGood Luck.

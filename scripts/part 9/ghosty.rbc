@@ -1,0 +1,123 @@
+#dynamic 0x8B1008
+
+
+#org @start
+lock
+faceplayer
+msgbox @msg1 MSG_NORMAL
+
+fadescreen 0x1
+fanfare 0x170
+special 0x0
+waitfanfare
+fadescreen 0x0
+
+pause 0x20
+
+msgbox @msg2 MSG_NORMAL
+pause 0x15
+
+showsprite 0x2
+applymovement 0x2 @movered
+waitmovement 0x2
+pause 0x20
+applymovement 0xFF @mpout
+waitmovement 0x0
+pause 0x20
+applymovement 0x1 @moveghost
+waitmovement 0x1
+
+pause 0x20
+msgbox @redfirst MSG_NORMAL
+
+pause 0x20
+applymovement 0x1 @faceright
+waitmovement 0x1
+
+pause 0x10
+applymovement 0xFF @faceleft
+waitmovement 0x0
+
+pause 0x20
+msgbox @ghostlast MSG_NORMAL
+
+pause 0x10
+
+setflag 0x123B
+fadescreen 0x2
+hidesprite LASTTALKED
+
+pause 0x10
+applymovement 0x2 @redup
+waitmovement 0x2
+
+pause 0x10
+msgbox @msgred MSG_NORMAL
+
+pause 0x10
+applymovement 0x2 @redleave
+waitmovement 0x2
+setflag 0x123C
+
+release
+end
+
+#org @movered
+#raw 0x09
+#raw 0x09
+#raw 0x09
+#raw 0xFE
+
+#org @mpout
+#raw 0x0B
+#raw 0x0
+#raw 0xFE
+
+#org @moveghost
+#raw 0x04
+#raw 0xFE
+
+#org @redup
+#raw 0x09
+#raw 0x09
+#raw 0x03
+#raw 0xFE
+
+#org @redleave
+#raw 0x09
+#raw 0x09
+#raw 0x54
+#raw 0x09
+#raw 0xFE
+
+#org @faceright
+#raw 0x03
+#raw 0xFE
+
+#org @faceleft
+#raw 0x02
+#raw 0xFE
+
+
+#org @msg1
+= Hello again [player].\pYou've reached the final destination!\pAll the stolen pokemon are in the\nroom up ahead.\pLet me heal your pokemon first.
+
+#org @msg2
+= I found another guy wandering this\nplace, and brought him here.\pHe says he is an ally of yours.
+
+#org @redfirst
+= [red_rs]Hi, I'm trainer RED from Kanto's\nRegion Pokemon Agency.\pI was summoned here from the Hoenn\nHeadquarters to assist you at\lretrieving the stolen Pokemon.
+\pWe will be a team from now on!
+ 
+#org @ghostlast
+= Now that you have a friend,\nit is time to say goodbye.\pRemember, this is the final level,\nand the hardest one, so give it\lall you've got.\pI don't know if we will meet each\nother again... but it was nice\lknowing you.\pMy name is Lilith by the way.\pFarewell my friend!
+
+#org @msgred
+= [red_rs]Come on. Let's go!
+
+
+
+
+
+
+

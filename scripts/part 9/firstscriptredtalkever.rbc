@@ -1,0 +1,129 @@
+#dynamic 0x6B7B58
+
+#org @start
+lock
+faceplayer
+
+applymovement 0xFF @playerback
+waitmovement 0x0
+
+applymovement 0x2 @redfront
+waitmovement 0x2
+
+msgbox @red1 MSG_NORMAL
+
+applymovement 0x1 @bluemove
+waitmovement 0x1
+
+msgbox @blue1 MSG_NORMAL
+
+applymovement 0x3 @greenmove
+waitmovement 0x3
+
+msgbox @green1 MSG_NORMAL
+
+pause 0x15
+msgbox @red2 MSG_NORMAL
+pause 0x15
+msgbox @blue2 MSG_NORMAL
+pause 0x15
+msgbox @green2 MSG_NORMAL
+pause 0x15
+msgbox @red3 MSG_NORMAL
+
+applymovement 0x2 @redleave
+applymovement 0x1 @blueleave
+applymovement 0x3 @greenleave
+
+waitmovement 0x0
+
+setflag 0x124A
+setflag 0x124B
+setflag 0x124C
+
+end
+
+#org @playerback
+#raw 0x08
+#raw 0x08
+#raw 0x01
+#raw 0xFE
+
+#org @redfront
+#raw 0x08
+#raw 0xFE
+
+#org @bluemove
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x0B
+#raw 0x0B
+#raw 0xFE
+
+#org @greenmove
+#raw 0x08
+#raw 0x08
+#raw 0x08
+#raw 0x0A
+#raw 0x0A
+#raw 0xFE
+
+#org @redleave
+#raw 0x09
+#raw 0x09
+#raw 0x54
+#raw 0x09
+#raw 0xFE
+
+#org @blueleave
+#raw 0x09
+#raw 0x09
+#raw 0x0A
+#raw 0x0A
+#raw 0x09
+#raw 0x09
+#raw 0x54
+#raw 0x09
+#raw 0xFE
+
+#org @greenleave
+#raw 0x09
+#raw 0x09
+#raw 0x0B
+#raw 0x0B
+#raw 0x09
+#raw 0x09
+#raw 0x54
+#raw 0x09
+#raw 0xFE
+
+
+#org @red1
+= [red_rs]Hi there.\pYou will probalbly remember us.
+
+#org @blue1
+= [blue_rs]We are agends of the International\nPokemon Agency, but also double\lagents working for Team Magma!
+
+#org @green1
+= [lightgreen_rs]Nobody suspected us leaking\nclassified information about the\lagency all this time...
+
+
+#org @red2
+= [red_rs]Cutting right to the point, I got\nto admit you got very far, but\lthat ends here!\pEach of the next rooms lead to our\nBOSS, but you need to collect 3\lshards to open the final door.
+
+#org @blue2
+= [blue_rs]Each one of us has his own 3\nshards hidden in his room.
+
+#org @green2
+= [lightgreen_rs]So, you only need to pass through\none room to advance, although that\lwon't be so easy.
+
+#org @red3
+= [red_rs]Prepare yourself! We will be\nwaiting to the other side of our\lrooms, if you ever make it there.\pGood luck.
+
+
+
+
+
+
+

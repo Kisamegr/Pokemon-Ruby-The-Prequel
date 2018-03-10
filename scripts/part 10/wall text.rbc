@@ -1,0 +1,12 @@
+#dynamic 0x800000
+
+
+#org @start
+lock
+msgbox @msg MSG_NORMAL
+
+release
+end
+
+#org @msg
+= There is something written\non the wall.\p"Life sure is painful...\p...but you should be grateful.\pIf you are in a bad situation...\p...make a sacrifice for your\nsalvation".

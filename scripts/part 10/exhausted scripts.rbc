@@ -1,0 +1,13 @@
+#dynamic 0x8B000C
+
+#org @start
+lockall
+
+msgbox @msg MSG_KEEPOPEN
+closeonkeypress
+
+releaseall
+end
+
+#org @msg
+= I feel exhausted...

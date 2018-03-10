@@ -1,0 +1,11 @@
+#dynamic 0x8B3EBC
+
+
+#org @start
+lock
+msgbox @msg MSG_SIGN
+release
+end
+
+#org @msg
+= [blue_rs]Welcome to the Warp Zone!\pFrom here you can travel between\nthe episodes freely.\pBe sure to talk to the people on\nthe left, to get ready for your\ladventure!\pThank you for playing my rom, and\nI hope you have fun!\pYour friend, Kisamegr.
